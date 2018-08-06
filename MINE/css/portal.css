@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo:300');
+
+body {
+  background: url('https://i.imgur.com/VEbVFvW.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Chivo';
+  text-align: center;
+}
+
+/* Vertical Alignment Adjustments */
+
+.outer-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.inner-content { 
+  text-align: center;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 50%; left: 0; bottom: 0; right: 0;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transformt: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Header */
+
+.header .logo {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Container */
+
+.container.header-container {
+  max-width: 768px;
+}
+
+.container.icons-container {
+  max-width: 920px;
+}
+
+/* Icons */
+
+.icons {
+  margin-top: 40px;
+}
+
+.icons img {
+  max-width: 100%;
+}
+
+.icons h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #FFF;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+/* Players */
+
+.players {
+  background: rgba(59, 157, 179, 0.86);
+  padding: 15px;
+  margin-top: 75px;
+  border-radius: 5px;
+  color: #FFF;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
+.players p {
+  margin: 0;
+}

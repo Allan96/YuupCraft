@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>ArkhamNetwork Store &middot; Welcome</title>
+
+    <link href="css/style.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://ianlunn.github.io/Hover/css/hover.css">
+
+    <!-- <link href="//www.optimads.net/clients/arkham/store.css" rel="stylesheet"> -->
+   
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        
+        _gaq.push(['_setAccount', 'UA-36735942-3']);
+        _gaq.push(['_trackPageview']);
+        
+                
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+<style>
+.hvr-wobble-horizontal, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+    -webkit-animation-name: hvr-wobble-horizontal;
+    animation-name: hvr-wobble-vertical;
+    -webkit-animation-duration: 1s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 100000;
+    animation-iteration-count: 100000;
+}
+</style>	
+    
+    <!-- <style></style> -->
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Chivo:300,400,700');
+    
+    .template-preview-banner {
+        display: none;
+    }
+    
+    /* General */
+    
+    body {
+        background: url('https://i.imgur.com/VEbVFvW.jpg') no-repeat center center fixed;
+        background-size: cover;
+        margin-top: 0;
+        font-family: 'Chivo';
+    }
+    
+    a {
+        color: #FFF;
+    }
+    
+    .page-container {
+        margin-top: 100px;
+    }
+    
+    /* Header */
+    
+    .header .btn {
+        padding: 10px 15px;
+        border-radius: 4px;
+        background-color: #343434 !important;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .header .btn:hover,
+    .header .btn:focus,
+    .header .btn:active {
+        background-color: #313131 !important;
+    }
+    
+    .header .user {
+        float: left;
+        margin: 10px 0;
+    }
+    
+    .header {
+        margin: 0;
+        background: rgba(0, 0, 0, 0.5) !important;
+        padding: 10px 0;
+    }
+    
+    .header .buttons {
+        margin: 10px 0;
+        float: right;
+    }
+    
+    /* Buttons */
+
+    .btn,
+    .btn-default,
+    .dropdown-menu .btn-success {
+        border-radius: 0;
+        color: #FFF !important;
+        background: #2a517b !important;
+        border: 1px solid transparent !important;
+    }
+    
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    .dropdown-menu .btn-success:hover,
+    .dropdown-menu .btn-success:active,
+    .dropdown-menu .btn-success:focus {
+        color: #FFF !important;
+        background-color: #2a517b !important;
+        border: 1px solid transparent !important;
+    }
+    
+    .btn-info,
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active {
+        background-color: #2a517b !important;
+    }
+    
+    .btn-danger,
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active {
+        background-color: #2a517b !important;
+    }
+    
+    .button-status .btn-success {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    /* Logo */
+    
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+    
+    .logo img {
+        max-width: 100%;
+        margin-top: -30px;
+    }
+    
+    /* Grid */
+    
+    .grid-section {
+        margin-bottom: 30px;
+    }
+    
+    .grid-section .dropdown-menu {
+        width: 90%;
+        margin-right: -30px;
+        margin-left: 15px;
+        text-align: center;
+        font-size: 16px;
+        border: 0;
+        padding: 0;
+        margin-top: -20px;
+        margin-bottom: 0;
+    }
+    
+    .grid-section .dropdown-menu > li > a:first-of-type {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    
+    .grid-section .dropdown-menu > li > a:last-of-type {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .grid-section .dropdown-menu > li > a {
+        padding: 10px 20px !important;
+    }
+    
+    .grid-clickable {
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        display: block;
+        text-align: center;
+    }
+    
+    .grid-clickable img {
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px rgba(38, 133, 158, 0.5);
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .grid-clickable h3 {
+        font-size: 18px;
+        color: #4170a3;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+    
+    /* Footer */
+
+    * {
+        margin: 0;
+    }
+    
+    html, body {
+        height: 100%;
+    }
+    
+    .wrapper {
+        min-height: 100%;
+        margin-bottom: -190px; 
+    }
+    
+    .wrapper:after {
+        content: "";
+        display: block;
+    }
+    
+    .footer, .wrapper:after {
+        height: 190px; 
+    }
+    
+    .footer {
+        margin-left: 0;
+        margin-right: 0;
+        margin: 0;
+        padding-top: 0;
+        border-top: none;
+        color: #FFF;
+    }
+    
+    .footer .footer-top {
+        padding: 20px 0;
+        background: #1e1e1e;
+        text-align: center;
+    }
+    
+    .footer .footer-top img {
+        max-width: 200px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    
+    /* Content */
+    
+    .content::before {
+        background: url('img/top_container.png');
+        height: 64px;
+        width: 1170px;
+        margin-left: -40px;
+        margin-top: -64px;
+        content: "";
+        position: absolute;
+    }
+    
+    .content {
+        background: url('img/middle_container.png');
+        padding: 0 0;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        margin-top: 80px;
+        margin-bottom: 120px;
+        width: 100% !important;
+    }
+    
+    .content::after {
+        background: url('img/bottom_container.png');
+        height: 64px;
+        width: 1170px;
+        margin-left: -40px;
+        margin-bottom: -32px;
+        content: "";
+        position: absolute;
+        visibility: inherit !important;
+    }
+    
+    /* Panel */
+    
+    .panel {
+        border-radius: 0;
+        border: none;
+    }
+    
+    .panel:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    .panel-body {
+        padding: 30px 15px;
+        background: #f9f9f9;
+    }
+    
+    .panel-body.packages {
+        padding: 0 !important;
+        background: transparent;
+    }
+    
+    .panel .panel-heading {
+        background-color: #2b517b;
+        padding: 20px 30px;
+        color: #FFF;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: .5px;
+        border: none;
+        border-radius: 0;
+    }
+    
+    /* Tables */
+    
+    .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+        border: none;
+    }
+    
+    .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #f3f1f1;
+    }
+    
+    .table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+        background-color: #fbfbfb;
+    }
+    
+    /* Media Queries */
+    
+    @media (max-width: 768px) {
+        .logo {
+            padding: 0 30px;
+            margin-bottom: -70px;
+        }
+        
+        .logo img {
+            margin-top: 30px;
+        }
+        
+        .page-container {
+            padding: 0 30px;
+        }
+        
+        .grid-section .dropdown-menu {
+            margin-top: 20px;
+            width: 92.5%;
+        }
+        
+        .header .user,
+        .header .buttons {
+            text-align: center;
+            width: 100%;
+            float: inherit;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .container {
+            width: 1170px;
+        }
+    }
+</style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+        
+    <div class="header">
+        <div class="container">
+                        
+                            <div class="user">
+                    <a href="#" class="btn btn-default"><img src="https://crafatar.com/renders/head/Steve?scale=1">&nbsp; Guest</a>
+                </div>
+                        
+            <div class="buttons">
+              <div class="toolbar">
+                <div class="currency">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    BRL <span class="fa fa-caret-down"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                                                                       
+                                                                                                                                                                                                  </ul>
+                </div>
+                <div class="basket">
+                                          <a href="#" class="btn btn-info" disabled="disabled"><i class="icon-shopping-cart icon-white"></i> 0 item(s) for 0.00 USD</a>
+                                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="logo">
+        <a href="#"><img src="https://i.imgur.com/jx5MUOd.png" class="logo hvr-wobble-horizontal"></a>
+    </div>
+
+    <div class="container page-container">
+        	<div class="body">
+		<div class="content">
+		    <div class="panel panel-default">
+                <div class="panel-heading">Please enter your username to continue</div>
+                <div class="panel-body">
+                  <form method="post">
+                    <div class="username">
+                      <div class="input-group">
+                        <input type="text" name="ign" class="form-control input-lg" />
+                        <div class="input-group-btn"><button class="btn btn-success btn-lg" type="submit">Continue</button></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </div>
+		</div>
+		<div class="sidebar">
+			
+		</div>
+	</div>
+    </div>
+    
+    </div> <!-- End of page wrapper. -->
+    
+    <div class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <img src="https://i.imgur.com/jx5MUOd.png" alt="Logo">
+          <p>&copy; Quiron Network Inc. Todos Direitos Reservados.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal" id="popup-modal" tabindex="-1" role="dialog"></div>
+    
+        
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/skin.min.js"></script>
+    <script src="js/site.js"></script>
+
+  
+<script src="https://server.buycraft.net/tebexAccounts/tebexaccounts.js"></script>
+<script>
+    if (document.cookie.indexOf("showaccountbar") !== -1) {
+        var TebexAccounts = new TebexAccounts(document.body, {'accountId' : 112638, 'usernameId' : '', 'autoLogin': true });
+    }
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ade4f02621","applicationID":"31217205","transactionName":"ZQAEZUBYWBVTBRZbXlxKJ1JGUFkIHSUDRlRVChRIHVBYAlce","queueTime":0,"applicationTime":175,"atts":"SUcHEwhCSxs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
